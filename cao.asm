@@ -1,0 +1,22 @@
+DOSSEG
+.MODEL SMALL
+.STACK 0100h
+.DATA
+A DB 'Andrew Felix Cunanan',0ah,'BSCS',0ah,'3rd Year$'
+
+.CODE
+
+MOV AX, @DATA
+MOV DS, AX
+
+MOV AH, 09h
+
+MOV DX, OFFSET A
+INT 21h
+
+
+
+
+MOV AX, 4C00h
+INT 21h
+END

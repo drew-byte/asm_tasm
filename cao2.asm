@@ -1,0 +1,26 @@
+DOSSEG
+.MODEL SMALL
+.STACK 0100h
+.DATA
+A DB 'COMPUTER$'
+B DB 0ah,'ORGANIZATION$'
+C DB 0ah,'A',0ah,'R',0ah,'C',0ah,'H',0ah,'I',0ah,'T',0ah,'E',0ah,'C',0ah,'T',0ah,'U',0ah,'R',0ah,'E$'
+
+.CODE
+
+MOV AX, @DATA
+MOV DS, AX
+MOV AH, 09h
+
+MOV DX, OFFSET A
+INT 21h
+
+MOV DX, OFFSET C
+INT 21h
+
+MOV DX, OFFSET B
+INT 21h
+
+MOV AX, 4C00h
+INT 21h
+END
